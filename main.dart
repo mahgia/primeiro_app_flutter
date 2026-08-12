@@ -1,36 +1,53 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MeuApp());
+  runApp(const MaterialApp(
+    debugShowCheckedModeBanner: false, 
+    home: AtividadeDoSlide(),
+  ));
 }
 
-class MeuApp extends StatelessWidget {
-  const MeuApp({super.key});
+class AtividadeDoSlide extends StatelessWidget {
+  const AtividadeDoSlide({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        // 1. Tela vazia com Scaffold
-        appBar: AppBar(
-          // 2. Título do AppBar
-          title: const Text('Meu Primeiro App Flutter'),
-          // BÔNUS DO CHEFE: Mude a cor do AppBar
-          backgroundColor: Colors.deepPurple,
-        ),
-        body: const Center(
-          // 3. Center no body para centralizar
-          child: Text(
-            // 4. Text com breve descrição
-            'Olá! Estou criando meu primeiro app no Flutter.',
-            // BÔNUS DO CHEFE: Texto em negrito
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center, 
+        children: [
+          
+          // --- Atividade do Slide (HTML) ---
+          const Text(
+            "Meu App",
+            style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+          ),
+
+          const Text(
+            "Bem-vindo",
+            style: TextStyle(fontSize: 25),
+          ),
+
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text("Iniciar"),
+          ),
+
+          const SizedBox(height: 40),
+
+          // --- Frase solicitada pelo professor ---
+          const Center(
+            child: Text(
+              "Agora é no VsCode",
+              style: TextStyle(
+                color: Colors.blue,
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
-        ),
+          
+        ],
       ),
     );
   }
